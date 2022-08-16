@@ -1,10 +1,10 @@
 import faker from 'faker';
-import { Position } from './GoogleMap';
+import { Markable } from './GoogleMap';
 
 export class Company {
     name: string;
     catchPhrase: string;
-    location: Position;
+    location: Markable['location'];
 
     constructor() {
         this.name = faker.company.companyName();
@@ -15,7 +15,7 @@ export class Company {
         }
     }
 
-    getMarkerContent(){
+    getMarkContent(): string{
         return `
             <div>
                 <h2>Company is in ${faker.address.cityName()}</h2>

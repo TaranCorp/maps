@@ -16,15 +16,15 @@ export class GoogleMap {
         );
     }
 
-    addMarker(customPosition: Position, markerContent: string): void {
+    addMarker(markable: Markable): void {
         const marker = new google.maps.Marker({
             map: this.map,
-            position: customPosition
+            position: markable.location
         })
 
         marker.addListener('click', () => {
             const infoWindow = new google.maps.InfoWindow({
-                content: markerContent
+                content: markable.getMarkContent()
             });
             
             infoWindow.open(this.map, marker)
@@ -32,7 +32,10 @@ export class GoogleMap {
     }
 }
 
-export interface Position {
-    lat: number;
-    lng: number;
+export interface Markable {
+    location: {
+        lat: number;
+        lng: number;
+    }
+    getMarkContent(): string;
 }

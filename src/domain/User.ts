@@ -1,9 +1,9 @@
 import faker from 'faker';
-import { Position } from './GoogleMap'
+import { Markable } from './GoogleMap';
 
 export class User {
     name: string;
-    location: Position
+    location: Markable['location']
 
     constructor() {
         this.name = faker.name.firstName();
@@ -13,7 +13,7 @@ export class User {
         }
     }
 
-    getMarkerContent(): string{
+    getMarkContent(): string{
         return `User is in ${faker.address.cityName()}`
     } 
 }
