@@ -1,7 +1,7 @@
 import faker from 'faker';
 import { Markable } from './GoogleMap';
 
-export class User {
+export class User implements Markable{
     name: string;
     location: Markable['location']
 

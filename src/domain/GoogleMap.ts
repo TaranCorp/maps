@@ -38,4 +38,5 @@ export interface Markable {
         lng: number;
     }
     getMarkContent(): string;
+    color?: string;
 }
