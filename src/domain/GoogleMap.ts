@@ -16,10 +16,18 @@ export class GoogleMap {
         );
     }
 
-    addMarker(customPosition: Position): void {
-        new google.maps.Marker({
+    addMarker(customPosition: Position, markerContent: string): void {
+        const marker = new google.maps.Marker({
             map: this.map,
             position: customPosition
+        })
+
+        marker.addListener('click', () => {
+            const infoWindow = new google.maps.InfoWindow({
+                content: markerContent
+            });
+            
+            infoWindow.open(this.map, marker)
         })
     }
 }

@@ -12,4 +12,8 @@ export class User {
             lng: parseFloat(faker.address.longitude())
         }
     }
+
+    getMarkerContent(): string{
+        return `User is in ${faker.address.cityName()}`
+    } 
 }
