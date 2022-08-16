@@ -7,9 +7,9 @@ const company = new Company();
 
 const googleMap = new GoogleMap('googleMap');
 
-googleMap.addMarker(user.location, user.getMarkerContent());
+googleMap.addMarker(user);
 
-googleMap.addMarker(company.location, company.getMarkerContent());
+googleMap.addMarker(company);
 
 
 
