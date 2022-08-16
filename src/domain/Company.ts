@@ -1,12 +1,10 @@
 import faker from 'faker';
+import { Position } from './GoogleMap';
 
 export class Company {
     name: string;
     catchPhrase: string;
-    location: {
-        lat: number;
-        lng: number;
-    }
+    location: Position;
 
     constructor() {
         this.name = faker.company.companyName();

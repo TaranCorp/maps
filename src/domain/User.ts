@@ -1,17 +1,15 @@
 import faker from 'faker';
+import { Position } from './GoogleMap'
 
 export class User {
     name: string;
-    location: {
-        latitude: number,
-        longitude: number
-    }
+    location: Position
 
     constructor() {
         this.name = faker.name.firstName();
         this.location = {
-            latitude: parseFloat(faker.address.latitude()),
-            longitude: parseFloat(faker.address.longitude())
+            lat: parseFloat(faker.address.latitude()),
+            lng: parseFloat(faker.address.longitude())
         }
     }
 }

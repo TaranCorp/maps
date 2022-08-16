@@ -16,10 +16,15 @@ export class GoogleMap {
         );
     }
 
-    addMarker(customPosition: google.maps.LatLngLiteral): void {
+    addMarker(customPosition: Position): void {
         new google.maps.Marker({
             map: this.map,
             position: customPosition
         })
     }
+}
+
+export interface Position {
+    lat: number;
+    lng: number;
 }
