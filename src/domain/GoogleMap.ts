@@ -1,8 +1,7 @@
 export class GoogleMap {
     private map: google.maps.Map;
 
-    constructor() {
-        const googleMapDiv = document.getElementById('googleMap') as HTMLElement;
+    constructor(elementId: string) {
         const mapProperties = {
             zoom: 1,
             center: {
@@ -12,8 +11,15 @@ export class GoogleMap {
         };
 
         this.map = new google.maps.Map(
-            googleMapDiv,
+            document.getElementById(elementId) as HTMLElement,
             mapProperties
         );
+    }
+
+    addMarker(customPosition: google.maps.LatLngLiteral): void {
+        new google.maps.Marker({
+            map: this.map,
+            position: customPosition
+        })
     }
 }
